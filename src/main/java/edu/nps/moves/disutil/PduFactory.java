@@ -381,7 +381,7 @@ public class PduFactory {
                 }
 
                 // Advance the index to the start of the next PDU
-                int pduLength = pdu.getPduLength();
+                int pduLength = pdu.getMarshalledSize();
                 pduStartPointInData = pduStartPointInData + pduLength;
 
                 //System.out.println("PDUStartPOint:" + pduStartPointInData + " data: " + data.length);

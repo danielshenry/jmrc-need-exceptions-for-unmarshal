@@ -16,6 +16,11 @@ import java.nio.charset.Charset;
 public class VariableDatum extends Object implements Serializable {
 
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
      * ID of the variable datum
      */
     protected long variableDatumID;

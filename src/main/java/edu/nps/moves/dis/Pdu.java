@@ -20,6 +20,11 @@ import java.util.logging.Logger;
 public class Pdu extends Object implements Serializable {
 
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
      * The version of the protocol. 5=DIS-1995, 6=DIS-1998.
      */
     protected short protocolVersion = (short) 6;
