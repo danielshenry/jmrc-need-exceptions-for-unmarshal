@@ -25,6 +25,7 @@
  */
 package edu.nps.moves.disutil;
 
+import edu.nps.moves.dis.DISException;
 import edu.nps.moves.dis.Pdu;
 
 /**
@@ -66,7 +67,12 @@ public class ExperimentalPdu extends Pdu {
 
     @Override
     public void unmarshal(java.nio.ByteBuffer buff) {
-        super.unmarshal(buff);
+        try {
+			super.unmarshal(buff);
+		} catch (DISException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
         // abutler - The body is now initialized in the setPduLength() call
         // body = new byte[this.getPduLength() - 12]; // 12 is size of the pdu header.

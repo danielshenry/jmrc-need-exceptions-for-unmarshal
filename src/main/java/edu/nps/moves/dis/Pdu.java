@@ -204,7 +204,10 @@ public class Pdu extends Object implements Serializable {
             unmarshal(ByteBuffer.wrap(pdu));
         } catch (IOException ex) {
             Logger.getLogger(EntityStatePdu.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } catch (DISException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     } // end of unmarshal method 
 
     /**
@@ -232,9 +235,11 @@ public class Pdu extends Object implements Serializable {
      * @throws java.nio.BufferUnderflowException if buff is too small
      * @see java.nio.ByteBuffer
      * @param buff The ByteBuffer at the position to begin reading
+ * @throws DISException 
      * @since ??
      */
-    public void unmarshal(java.nio.ByteBuffer buff) {
+public void unmarshal(java.nio.ByteBuffer buff) throws DISException
+{
         protocolVersion = (short) (toUnsignedInt(buff.get()));
         exerciseID = (short) (toUnsignedInt(buff.get()));
         pduType = (short) (toUnsignedInt(buff.get()));

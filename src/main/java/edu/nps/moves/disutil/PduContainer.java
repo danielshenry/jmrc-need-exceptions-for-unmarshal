@@ -1,5 +1,6 @@
 package edu.nps.moves.disutil;
 
+import edu.nps.moves.dis.DISException;
 import edu.nps.moves.dis.Pdu;
 import java.util.*;
 import java.io.*;
@@ -94,7 +95,12 @@ public void unmarshal(java.nio.ByteBuffer buff)
        for(int idx = 0; idx < numberOfPdus; idx++)
        {
             Pdu anX = new Pdu();
-            anX.unmarshal(buff);
+            try {
+				anX.unmarshal(buff);
+			} catch (DISException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
             pdus.add(anX);
        }
 

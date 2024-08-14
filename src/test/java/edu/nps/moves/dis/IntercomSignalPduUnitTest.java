@@ -76,9 +76,10 @@ public class IntercomSignalPduUnitTest {
 
     /**
      * Test marshalling and unmarshalling
+     * @throws DISException 
      */
     @Test
-    public void testMarshalUnmarshal() {
+    public void testMarshalUnmarshal() throws DISException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         DataOutputStream dos = new DataOutputStream(baos);
         isp.marshal(dos);

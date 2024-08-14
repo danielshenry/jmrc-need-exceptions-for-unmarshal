@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 public class SetDataPduTest {
 
     @Test
-    public void unmarshal() throws IOException {
+    public void unmarshal() throws IOException, DISException {
         PduFactory factory = new PduFactory();
         Pdu pdu = factory.createPdu(PduFileLoader.load("SetDataPdu-vbs-script-cmd.raw"));
 

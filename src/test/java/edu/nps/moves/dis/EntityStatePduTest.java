@@ -48,7 +48,7 @@ public class EntityStatePduTest {
     }
 
     @Test
-    public void unmarshal() throws IOException {
+    public void unmarshal() throws IOException, DISException {
         PduFactory factory = new PduFactory();
         Pdu pdu = factory.createPdu(PduFileLoader.load("EntityStatePdu-26.raw"));
 

@@ -20,6 +20,7 @@ import edu.nps.moves.dis.CommentPdu;
 import edu.nps.moves.dis.CommentReliablePdu;
 import edu.nps.moves.dis.CreateEntityPdu;
 import edu.nps.moves.dis.CreateEntityReliablePdu;
+import edu.nps.moves.dis.DISException;
 import edu.nps.moves.dis.DataPdu;
 import edu.nps.moves.dis.DataQueryPdu;
 import edu.nps.moves.dis.DataQueryReliablePdu;
@@ -72,7 +73,7 @@ import java.io.IOException;
 public class PduFactoryTest {
 
     @Test
-    public void testCreatePduByteArray() {
+    public void testCreatePduByteArray() throws DISException {
         PduFactory pduFactory = new PduFactory();
 
         /*
@@ -151,7 +152,7 @@ public class PduFactoryTest {
     }
 
     @Test
-    public void testCreatePduByteBuffer() {
+    public void testCreatePduByteBuffer() throws DISException {
         PduFactory pduFactory = new PduFactory();
         assertTrue(pduFactory.createPdu(ByteBuffer.wrap(new EntityStatePdu().marshal())) instanceof EntityStatePdu);
         // etc.  previous test gives coverage

@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 public class SignalPduTest {
 
     @Test
-    public void unmarshal() throws IOException {
+    public void unmarshal() throws IOException, DISException {
         PduFactory factory = new PduFactory();
         Pdu aPdu = factory.createPdu(PduFileLoader.load("SignalPdu.raw"));
 

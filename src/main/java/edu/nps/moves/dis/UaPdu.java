@@ -278,9 +278,11 @@ public class UaPdu extends DistributedEmissionsFamilyPdu implements Serializable
      * @throws java.nio.BufferUnderflowException if buff is too small
      * @see java.nio.ByteBuffer
      * @param buff The ByteBuffer at the position to begin reading
+ * @throws DISException 
      * @since ??
      */
-    public void unmarshal(java.nio.ByteBuffer buff) {
+public void unmarshal(java.nio.ByteBuffer buff) throws DISException
+{
         super.unmarshal(buff);
 
         emittingEntityID.unmarshal(buff);

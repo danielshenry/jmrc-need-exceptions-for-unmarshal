@@ -42,8 +42,9 @@ public class PduFactory {
      *
      * @param data
      * @return A PDU of the appropriate concrete subclass of PDU
+     * @throws DISException 
      */
-    public Pdu createPdu(byte data[]) {
+    public Pdu createPdu(byte data[]) throws DISException {
         return createPdu(ByteBuffer.wrap(data));
     }
 
@@ -53,8 +54,9 @@ public class PduFactory {
      *
      * @param buff
      * @return null if there was an error creating the Pdu
+     * @throws DISException 
      */
-    public Pdu createPdu(java.nio.ByteBuffer buff) {
+    public Pdu createPdu(java.nio.ByteBuffer buff) throws DISException {
 
         final int pduType = peekAtPduType(buff);
         if (pduType == -1) {

@@ -1,5 +1,6 @@
 package edu.nps.moves.disutil;
 
+import edu.nps.moves.dis.DISException;
 import edu.nps.moves.dis.Pdu;
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -77,7 +78,7 @@ public class DisConnection implements Runnable {
                 if (pdu != null) {
                     handleMessage(pdu);
                 }
-            } catch (IOException e) {
+            } catch (IOException | DISException e) {
                 Logger.getLogger(getClass().getName()).log(Level.SEVERE, null, e);
                 break;
             }

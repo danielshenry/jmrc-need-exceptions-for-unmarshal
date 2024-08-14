@@ -257,7 +257,7 @@ public class VariableDatum extends Object implements Serializable {
      * @param buff The ByteBuffer at the position to begin reading
      * @since ??
      */
-    public void unmarshal(java.nio.ByteBuffer buff) {
+    public void unmarshal(java.nio.ByteBuffer buff) throws DISException {
         variableDatumID = buff.getInt();
         variableDatumLength = buff.getInt();
         int payloadBytes = (int) (variableDatumLength / 8);
